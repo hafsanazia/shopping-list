@@ -1,0 +1,63 @@
+.main {
+    width: 100%;
+}
+.headers {
+    background-color:#2874f0;
+}
+.icons{
+    padding: 10px;
+    font-size: 30px;
+    width: 40px;
+    color: yellow;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.card {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  width: 50%;
+    border: 1px ridge grey;
+    padding: 10px;
+    font-size: 24px;
+} 
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+  
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
+.btn{
+    border-radius: 20px;
+    width: 100%;
+    background-color: #FFAA1D;
+}
+.discount {
+    margin-left: 10px; 
+    float: right;
+    color: green;
+}
+
+.float {
+    float: left;
+}
+
+
