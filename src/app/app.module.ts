@@ -7,12 +7,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule, MatInputModule, MatCardModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { SearchPipe } from './search.pipe';
+import { SharedService } from './service/shared.service';
+import { MatButtonModule } from '@angular/material/button';
 
+const appRoutes: Routes = [
+  { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "home", component: HomeComponent },
+  { path: "cart", component: CartComponent }
+];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CartComponent,
+    HomeComponent,
+    SearchPipe,
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -20,9 +35,10 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     FormsModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

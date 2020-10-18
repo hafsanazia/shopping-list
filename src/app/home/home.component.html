@@ -1,0 +1,40 @@
+
+<div class="main">
+  <div class="row headers">
+    <div class="col-sm-3 float">
+      <button  mat-fab color="primary" aria-label="Example icon button with a delete icon">
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
+    <div class="col-sm-6 float">
+      <form class="example-form">
+        <mat-form-field class="main">
+          <mat-label style="color: white;">Search</mat-label>
+          <input type="text" name="search" [(ngModel)]="searchText" matInput>
+          <mat-icon matSuffix style="color: white;">search</mat-icon>
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="col-sm-3">
+      <button  mat-fab color="primary" aria-label="Example icon button with a delete icon" (click) = "goToCart()">
+        <i class="fa" style="font-size:30px; color: white;" >&#xf07a;</i>
+        <span class='badge badge-warning' id='lblCartCount'> {{cartNumber}} </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="row" style="padding: 15px; margin: 10px;">
+    <div class="col-md-2 card" *ngFor="let item of itemList | search : searchText">
+      <img src={{item.img_url}} class="img">
+      <div class="main">
+        <p>{{item.name}}</p>
+        <span class="float">&#x20b9;</span>
+        <p class="float">&nbsp;{{item.price}} &nbsp; &nbsp; </p>
+        <del>900</del>
+        <p class="discount"> {{item.discount}} % off</p>
+        <button class="add-to-cart" (click)="addCart(item)"> Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+</div>
